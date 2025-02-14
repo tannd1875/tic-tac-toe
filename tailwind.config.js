@@ -1,3 +1,5 @@
+import { transform } from "typescript";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -15,6 +17,28 @@ export default {
         "player-two": "#e7a240",
         "player-win": "rgb(153,255,153)",
         "player-lose": "#ccc",
+      },
+      animation: {
+        slideIn: "slideIn .3s ease 1",
+        appear: "appear 2s 1",
+      },
+    },
+    keyframes: {
+      slideIn: {
+        "0%": {
+          transform: "translateX(7rem)",
+        },
+        "100%": {
+          transform: "translateX(0)",
+        },
+      },
+      appear: {
+        "0%": {
+          "background-color": "white",
+        },
+        "100%": {
+          "background-color": "transparent",
+        },
       },
     },
   },
